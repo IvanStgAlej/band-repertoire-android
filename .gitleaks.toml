@@ -1,0 +1,5 @@
+# Security check S1: scan the full git history for secrets with gitleaks' default rules.
+title = "band-repertoire-android"
+
+[extend]
+useDefault = true

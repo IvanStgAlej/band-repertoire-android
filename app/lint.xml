@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Security check S6: these issues fail the build instead of being warnings. -->
+<lint>
+    <issue id="HardcodedDebugMode" severity="error" />
+    <issue id="AllowBackup" severity="error" />
+    <issue id="DataExtractionRules" severity="error" />
+    <issue id="InsecureBaseConfiguration" severity="error" />
+    <issue id="AcceptsUserCertificates" severity="error" />
+    <issue id="ExportedService" severity="error" />
+    <issue id="ExportedReceiver" severity="error" />
+    <issue id="ExportedContentProvider" severity="error" />
+    <issue id="ExportedPreferenceActivity" severity="error" />
+    <issue id="UnprotectedSMSBroadcastReceiver" severity="error" />
+    <issue id="UnsafeProtectedBroadcastReceiver" severity="error" />
+    <issue id="SetJavaScriptEnabled" severity="error" />
+    <issue id="AddJavascriptInterface" severity="error" />
+    <issue id="TrustAllX509TrustManager" severity="error" />
+    <issue id="AllowAllHostnameVerifier" severity="error" />
+    <issue id="BadHostnameVerifier" severity="error" />
+    <issue id="SSLCertificateSocketFactoryCreateSocket" severity="error" />
+    <issue id="SSLCertificateSocketFactoryGetInsecure" severity="error" />
+    <issue id="PackagedPrivateKey" severity="error" />
+    <issue id="WorldReadableFiles" severity="error" />
+    <issue id="WorldWriteableFiles" severity="error" />
+    <issue id="SecureRandom" severity="error" />
+    <issue id="GetInstance" severity="error" />
+    <issue id="UnsafeIntentLaunch" severity="error" />
+</lint>

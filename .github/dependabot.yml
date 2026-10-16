@@ -1,0 +1,19 @@
+# Security check S9: weekly update PRs for Gradle dependencies and GitHub Actions.
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      androidx-compose:
+        patterns:
+          - "androidx.*"
+      kotlin:
+        patterns:
+          - "org.jetbrains.kotlin*"
+          - "org.jetbrains.kotlinx*"
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
