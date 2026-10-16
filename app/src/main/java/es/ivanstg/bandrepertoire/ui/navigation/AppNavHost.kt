@@ -26,7 +26,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import es.ivanstg.bandrepertoire.AppContainer
 import es.ivanstg.bandrepertoire.data.model.SelectedEnsemble
-import es.ivanstg.bandrepertoire.ui.components.EmptyView
+import es.ivanstg.bandrepertoire.ui.attendance.AttendanceRoute
 import es.ivanstg.bandrepertoire.ui.components.LoadingView
 import es.ivanstg.bandrepertoire.ui.concert.NextConcertRoute
 import es.ivanstg.bandrepertoire.ui.ensemble.EnsemblePickerRoute
@@ -90,7 +90,7 @@ private fun MainScreen(ensemble: SelectedEnsemble, onChangeEnsemble: () -> Unit)
         NavHost(navController, startDestination = Repertoire, modifier = Modifier.padding(padding)) {
             composable<Repertoire> { RepertoireRoute(ensemble.id) }
             composable<NextConcert> { NextConcertRoute(ensemble.id) }
-            composable<Attendance> { EmptyView("Attendance") }
+            composable<Attendance> { AttendanceRoute(ensemble.id, snackbarHostState) }
         }
     }
 }
