@@ -6,6 +6,7 @@ import es.ivanstg.bandrepertoire.data.DataStoreEnsembleSelection
 import es.ivanstg.bandrepertoire.data.EnsembleSelection
 import es.ivanstg.bandrepertoire.data.NetworkBandRepository
 import es.ivanstg.bandrepertoire.data.remote.ApiService
+import java.time.Clock
 import java.util.concurrent.TimeUnit
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -24,6 +25,9 @@ class AppContainer(context: Context, baseUrl: String = BuildConfig.API_BASE_URL,
         NetworkBandRepository(createApiService(baseUrl, buildOkHttpClient(debug)), baseUrl)
 
     val ensembleSelection: EnsembleSelection = DataStoreEnsembleSelection(context.applicationContext)
+
+    /** "Today" for the screens; injected so tests can pin the date. */
+    val clock: Clock = Clock.systemDefaultZone()
 }
 
 /** HTTP logging is only ever added to debug builds: release builds must not log request or response data. */
