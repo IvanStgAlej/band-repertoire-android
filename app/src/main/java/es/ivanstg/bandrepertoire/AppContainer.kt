@@ -2,6 +2,8 @@ package es.ivanstg.bandrepertoire
 
 import android.content.Context
 import es.ivanstg.bandrepertoire.data.BandRepository
+import es.ivanstg.bandrepertoire.data.DataStoreEnsembleSelection
+import es.ivanstg.bandrepertoire.data.EnsembleSelection
 import es.ivanstg.bandrepertoire.data.NetworkBandRepository
 import es.ivanstg.bandrepertoire.data.remote.ApiService
 import java.util.concurrent.TimeUnit
@@ -20,6 +22,8 @@ class AppContainer(context: Context, baseUrl: String = BuildConfig.API_BASE_URL,
 
     val repository: BandRepository =
         NetworkBandRepository(createApiService(baseUrl, buildOkHttpClient(debug)), baseUrl)
+
+    val ensembleSelection: EnsembleSelection = DataStoreEnsembleSelection(context.applicationContext)
 }
 
 /** HTTP logging is only ever added to debug builds: release builds must not log request or response data. */
