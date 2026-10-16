@@ -1,0 +1,22 @@
+# Build output
+.gradle/
+.kotlin/
+build/
+captures/
+*.apk
+*.aab
+
+# Machine-specific and secret material: never commit
+local.properties
+*.jks
+*.keystore
+keystore.properties
+google-services.json
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Local agent workspace
+.superpowers/
