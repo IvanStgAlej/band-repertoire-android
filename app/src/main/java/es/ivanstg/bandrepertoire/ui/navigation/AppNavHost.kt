@@ -29,6 +29,7 @@ import es.ivanstg.bandrepertoire.data.model.SelectedEnsemble
 import es.ivanstg.bandrepertoire.ui.components.EmptyView
 import es.ivanstg.bandrepertoire.ui.components.LoadingView
 import es.ivanstg.bandrepertoire.ui.ensemble.EnsemblePickerRoute
+import es.ivanstg.bandrepertoire.ui.repertoire.RepertoireRoute
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
@@ -86,7 +87,7 @@ private fun MainScreen(ensemble: SelectedEnsemble, onChangeEnsemble: () -> Unit)
         snackbarHost = { SnackbarHost(snackbarHostState) },
     ) { padding ->
         NavHost(navController, startDestination = Repertoire, modifier = Modifier.padding(padding)) {
-            composable<Repertoire> { EmptyView("Repertoire") }
+            composable<Repertoire> { RepertoireRoute(ensemble.id) }
             composable<NextConcert> { EmptyView("Next concert") }
             composable<Attendance> { EmptyView("Attendance") }
         }
